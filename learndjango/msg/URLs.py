@@ -1,7 +1,5 @@
 from django.conf.urls import patterns,url
 from msg import views
 
-urlpatterns = [
-  url('',url(r'^$',views.index,name="index")
-  ]
+urlpatterns = patterns('',url(r'^$',views.index,name="index"))
                        
