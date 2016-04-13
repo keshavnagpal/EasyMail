@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <title>Email</title>
+    <!--  CSS-->
+    {% load staticfiles %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{% static "msg/css/materialize.min.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{% static "msg/css/style.css" %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body class="teal lighten-5 ">
+
+    <nav class="teal flow-text" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo white-text">EasyMail</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" class="white-text">Home</a></li>
+
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav teal">
+                <li><a href="#" class="white-text">Home</a></li>
+
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse white-text"><i class="material-icons">menu</i></a>
+         </div>
+    </nav>
+<br/>
+    <main>
+        <div class="row">
+        
+        <form class="col s12" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="email" value="@gmail.com" class="validate active" name="sender">
+                <label for="email">Your Email</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="password" type="password" class="validate" name="password">
+                <label for="password">Password</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="email" type="email" class="validate" name="reciever">
+                <label for="email">To</label>
+            </div>
+        </div>
+
+        <div class="row">>
+            <div class="input-field col s6">
+                <input id="subject" type="text" class="validate" name="sub">
+                <label for="subject">Subject</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea" name="message"></textarea>
+                <label for="textarea1">Message</label>
+            </div>
+       </div>
+
+        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+            <i class="material-icons right">send</i>
+        </button>
+
+
+          <div class="card teal lighten-4 hoverable">
+            <div class="card-content">
+              <span class="card-title">Doesn't work for you?</span>
+              <p>You need to allow access to other apps to login to your email account , Trust is the key we don't record any of your passwords</p>
+            </div>
+            <div class="card-action">
+              <a href="https://www.google.com/settings/security/lesssecureapps" class="teal-text">Allow access</a>
+            </div>
+          </div>
+
+        
+    </form>
+    </div>
+
+</main>
+
+    <footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About the app</h5>
+          <p class="grey-text text-lighten-4">A basic web application to send emails fast.</p>
+        </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text">some useful links</h5>
+          <ul>
+            <li><a class="white-text" href="http://www.gmail.com" target="_blank">Gmail</a></li>
+            <li><a class="white-text" href="https://login.yahoo.com/" target="_blank">Ymail</a></li>
+            <li><a class="white-text" href="#!">XYZmail</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+  
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static "msg/js/materialize.min.js" %}"></script>
+  <script src="{% static "msg/js/init.js" %}"></script>
+
+</body>
+</html>
